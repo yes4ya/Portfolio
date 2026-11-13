@@ -1,6 +1,6 @@
-# Portofolio Yesaya Roy Nugraha (Yesa)
+# Portfolio Yesaya Roy Nugraha (Yesa)
 
-Portofolio web satu halaman yang dibangun dengan **React**, **Vite**, dan **Tailwind CSS**, berbasis data terstruktur dari `src/data/portfolioData.json`. Dua bahasa (Indonesia dan Inggris) dan mode terang/gelap tersedia tanpa reload halaman.
+Portfolio web satu halaman yang dibangun dengan **React**, **Vite**, dan **Tailwind CSS**, berbasis data terstruktur dari `src/data/portfolioData.json`. Dua bahasa (Indonesia dan Inggris) dan mode terang/gelap tersedia tanpa reload halaman.
 
 ## Tech Stack
 - **Framework & Core**: React 18, Vite 6
@@ -10,7 +10,7 @@ Portofolio web satu halaman yang dibangun dengan **React**, **Vite**, dan **Tail
 
 ## Struktur
 ```text
-D:\Project Portofolio/
+D:\Project Portfolio/
 ├── index.html
 ├── package.json
 ├── vite.config.js
