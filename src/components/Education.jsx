@@ -1,68 +1,35 @@
 import React from 'react';
 
-const Education = ({ education }) => {
+const SectionHeading = ({ number, title, active }) => (
+  <div className="flex items-baseline gap-4">
+    <span className={`font-mono text-[11px] tracking-[0.18em] transition-colors duration-500 ${active ? 'text-accent' : 'text-ink-muted'}`}>{number}</span>
+    <h2 className="font-display text-2xl text-ink sm:text-3xl">{title}</h2>
+  </div>
+);
+
+const Education = ({ education, ui, active = false }) => {
   return (
-    <section id="education" className="py-12 sm:py-16 border-b border-surface-border">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          <div className="md:col-span-3">
-            <h2 className="text-xs font-mono uppercase tracking-wider text-typography-muted">
-              Pendidikan
-            </h2>
-          </div>
-
-          <div className="md:col-span-9 space-y-6">
-            {education.map((item, idx) => (
-              <div
-                key={idx}
-                className="border border-surface-border rounded-lg p-5 sm:p-6 bg-surface"
-              >
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
-                  <h3 className="text-base font-bold text-white">
-                    {item.institution}
-                  </h3>
-                  <span className="font-mono text-xs text-typography-muted">
-                    {item.location}
-                  </span>
-                </div>
-
-                <div className="text-sm font-medium text-typography-primary mb-1">
-                  {item.degree} &middot; {item.major}
-                </div>
-
-                <div className="text-xs font-mono text-typography-secondary mb-2">
-                  Spesialisasi: {item.specialization}
-                </div>
-
-                {(item.startYear || item.gpa) && (
-                  <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs font-mono text-typography-muted mb-4">
-                    {item.startYear && item.endYear && (
-                      <span>Periode: {item.startYear} - {item.endYear}</span>
-                    )}
-                    {item.gpa && <span>IPK: {item.gpa} / 4.00</span>}
-                  </div>
-                )}
-
-                <div className="pt-3 border-t border-surface-borderSubtle">
-                  <div className="text-xs font-mono text-typography-muted mb-2">
-                    Fokus Kurikulum & Rekayasa:
-                  </div>
-                  <ul className="space-y-1.5 text-xs sm:text-sm text-typography-secondary">
-                    {item.highlights.map((h, hIdx) => (
-                      <li key={hIdx} className="flex items-start gap-2">
-                        <span className="text-typography-muted select-none">&bull;</span>
-                        <span>{h}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+    <section id="education" className="scroll-mt-24">
+      <SectionHeading number="04" title={ui.educationTitle} active={active} />
+      {education.length === 0 ? (
+        <p className="mt-6 text-sm text-ink-secondary">{ui.educationEmpty}</p>
+      ) : (
+        <ul className="mt-8 space-y-10">
+          {education.map((item, index) => (
+            <li key={index} className="grid grid-cols-1 gap-4 sm:grid-cols-[220px_1fr] sm:gap-8">
+              <div>
+                <p className="font-mono text-xs text-ink-muted">{item.startYear} - {item.endYear}</p>
+                <p className="mt-1 text-sm text-ink-secondary">{item.location}</p>
               </div>
-            ))}
-          </div>
-        </div>
-
-      </div>
+              <div>
+                <h3 className="font-display text-xl text-ink">{item.institution}</h3>
+                <p className="mt-1 text-sm text-ink-secondary">{item.degree}</p>
+                <p className="mt-1 text-sm text-ink-muted">{ui.specialization}: {item.specialization} &middot; {ui.gpa}: {item.gpa}/4.00</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
     </section>
   );
 };

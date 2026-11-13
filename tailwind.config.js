@@ -1,47 +1,43 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  // Theme toggle drives `data-theme`, so dark: variants follow the app theme.
+  darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     extend: {
+      transitionTimingFunction: {
+        editorial: 'cubic-bezier(0.22, 1, 0.36, 1)'
+      },
       colors: {
-        background: '#000000',
+        canvas: 'var(--bg)',
         surface: {
-          DEFAULT: '#0a0a0a',
-          muted: '#121212',
-          subtle: '#171717',
-          border: '#262626',
-          borderSubtle: '#1f1f1f'
+          DEFAULT: 'var(--surface)',
+          muted: 'var(--surface-muted)',
+          subtle: 'var(--surface-subtle)'
         },
-        typography: {
-          primary: '#ededed',
-          secondary: '#a1a1a1',
-          muted: '#8a8a8a',
-          faint: '#7d7d7d'
+        line: {
+          DEFAULT: 'var(--border)',
+          subtle: 'var(--border-subtle)'
+        },
+        ink: {
+          DEFAULT: 'var(--text)',
+          secondary: 'var(--text-secondary)',
+          muted: 'var(--text-muted)'
+        },
+        accent: {
+          DEFAULT: 'var(--accent)',
+          contrast: 'var(--accent-contrast)'
         }
       },
       fontFamily: {
-        sans: [
-          'Inter',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          'Segoe UI',
-          'Roboto',
-          'sans-serif'
-        ],
-        mono: [
-          'JetBrains Mono',
-          'ui-monospace',
-          'SFMono-Regular',
-          'Menlo',
-          'Monaco',
-          'Consolas',
-          'monospace'
-        ]
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif'],
+        mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+      },
+      letterSpacing: {
+        editorial: '0.18em'
       }
-    },
+    }
   },
-  plugins: [],
-}
+  plugins: []
+};

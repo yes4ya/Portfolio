@@ -3,83 +3,102 @@
     "personal": {
       "name": "Yesaya Roy Nugraha",
       "nickname": "Yesa",
-      "role": "Front-End Web Developer & UI/UX Designer",
-      "degree": "S.Kom (Sarjana Komputer)",
+      "role": "Frontend Developer & UI/UX Designer",
+      "degree": "S.Kom",
       "major": "Teknik Informatika",
       "institution": "Universitas Kristen Satya Wacana (UKSW)",
       "specialization": "Software Engineering",
       "location": "Salatiga, Indonesia",
-      "headline": "Front-End Developer & UI/UX Designer",
-      "subheadline": "Lulusan Teknik Informatika UKSW 2026 spesialisasi Software Engineering dengan IPK 3.53. Membangun antarmuka web dengan React dan Tailwind CSS, merancang prototipe di Figma, serta menangani troubleshooting perangkat dan sistem dasar.",
-      "bio": "Menyelesaikan studi Sarjana Komputer di UKSW pada 2026 dengan spesialisasi Software Engineering dan IPK 3.53, setelah magang sebagai UI/UX dan Front-End di Penerbit Erlangga. Pekerjaan saya berkisar pada tiga hal: merakit antarmuka web berbasis komponen dengan React dan Tailwind CSS, merancang alur serta prototipe di Figma, dan menangani masalah perangkat keras maupun sistem operasi. Dasar algoritma dan rekayasa perangkat lunak dari perkuliahan dipakai untuk menjaga struktur kode tetap rapi dan mudah dirawat.",
-      "status": "Terbuka untuk pekerjaan penuh waktu dan kontrak proyek",
-      "photoUrl": "/profile-yesaya-cutout.png",
+      "headline": "Frontend Developer & UI/UX Designer",
+      "subheadline": "Desain interface di Figma, lalu dibangun jadi website responsive pakai React dan Tailwind CSS.",
+      "bio": "Saya mendesain tampilan di Figma lalu membangunnya jadi website responsive pakai React dan Tailwind CSS. Waktu magang sebagai UI/UX & Front-End Intern di Penerbit Erlangga (Sep–Des 2025), saya bikin landing page untuk platform digital library mereka.",
+      "status": "Terbuka untuk kerja full-time dan proyek freelance",
+      "photoUrl": "",
       "experience": [
         {
           "role": "UI/UX & Front-End Intern",
           "organization": "Penerbit Erlangga",
           "period": "Sep 2025 – Des 2025",
-          "description": "Riset kebutuhan pengguna, desain wireframe & prototype Figma, implementasi UI React + Tailwind untuk sistem perpustakaan digital."
-        },
-        {
-          "role": "Asisten Dosen",
-          "organization": "Universitas Kristen Satya Wacana (UKSW)",
-          "period": "Agu 2023 – Jan 2024",
-          "description": "Membantu kuliah Human‑Computer Interaction & Introduction to IT, menyiapkan materi, menilai tugas, memfasilitasi lab pemrograman."
-        },
-        {
-          "role": "IT Support",
-          "organization": "Fakultas Teknik UKSW",
-          "period": "Feb 2023 – Jul 2023",
-          "description": "Diagnosa hardware, instalasi OS, troubleshooting jaringan dasar, dukungan Git/GitHub untuk proyek mahasiswa."
+          "description": "Mendesain interface sekaligus membangun landing page platform digital library pakai React.js dan Tailwind CSS. Fokus menjaga layout katalog buku tetap rapi, ringan, dan gampang dinavigasi di berbagai ukuran layar."
         }
       ],
-      "cvUrl": "/CV-Yesaya-Roy-Nugraha.pdf",
+      "cvUrl": "",
       "email": "yesayaroynugraha@gmail.com",
       "github": "https://github.com/yes4ya",
       "linkedin": "https://www.linkedin.com/in/yesayaroynugraha/"
     },
     "navLinks": [
-      { "name": "Tentang", "href": "#about" },
-      { "name": "Keahlian", "href": "#skills" },
-      { "name": "Proyek", "href": "#projects" },
-      { "name": "Pendidikan", "href": "#education" },
-      { "name": "Kontak", "href": "#contact" }
+      {
+        "name": "Proyek",
+        "href": "#work"
+      },
+      {
+        "name": "Keahlian",
+        "href": "#stack"
+      },
+      {
+        "name": "Pengalaman",
+        "href": "#experience"
+      },
+      {
+        "name": "Pendidikan",
+        "href": "#education"
+      },
+      {
+        "name": "Kontak",
+        "href": "#contact"
+      }
     ],
     "skills": {
       "categories": [
         {
-          "categoryName": "Front-End Web Development",
-          "description": "Perakitan antarmuka web modular dengan React dan Tailwind CSS.",
+          "categoryName": "Frontend Development",
           "items": [
-            { "name": "React.js", "level": "Mahir", "category": "Library UI" },
-            { "name": "Tailwind CSS", "level": "Mahir", "category": "CSS Utilitas" },
-            { "name": "Vite", "level": "Mahir", "category": "Alat Build" },
-            { "name": "JavaScript (ES6+)", "level": "Mahir", "category": "Bahasa" },
-            { "name": "HTML5", "level": "Mahir", "category": "Markup Semantik" },
-            { "name": "CSS3", "level": "Mahir", "category": "Styling" },
-            { "name": "Framer Motion", "level": "Terampil", "category": "Animasi" }
+            {
+              "name": "React.js",
+              "category": "Library UI"
+            },
+            {
+              "name": "Tailwind CSS",
+              "category": "CSS Utilitas"
+            },
+            {
+              "name": "Vite",
+              "category": "Build Tool"
+            },
+            {
+              "name": "JavaScript (ES6+)",
+              "category": "Bahasa"
+            },
+            {
+              "name": "HTML5 / CSS3",
+              "category": "Markup"
+            },
+            {
+              "name": "Framer Motion",
+              "category": "Animasi"
+            }
           ]
         },
         {
-          "categoryName": "Desain UI/UX",
-          "description": "Perancangan alur, wireframe, dan prototipe antarmuka di Figma.",
+          "categoryName": "UI/UX Design",
           "items": [
-            { "name": "Figma", "level": "Terampil", "category": "Desain & Prototipe" },
-            { "name": "Wireframing", "level": "Terampil", "category": "Layout & Struktur" },
-            { "name": "Prototyping", "level": "Terampil", "category": "Alur Interaksi" },
-            { "name": "Design Systems", "level": "Terampil", "category": "Spesifikasi UI" },
-            { "name": "Responsive Web Design", "level": "Mahir", "category": "Layout & Alur" }
-          ]
-        },
-        {
-          "categoryName": "Dukungan Teknis IT",
-          "description": "Diagnosa perangkat keras, sistem operasi, dan jaringan dasar.",
-          "items": [
-            { "name": "Hardware Diagnostics & Assembly", "level": "Terampil", "category": "Perangkat Keras" },
-            { "name": "OS & Software Troubleshooting", "level": "Terampil", "category": "Dukungan Sistem" },
-            { "name": "Basic Networking", "level": "Terampil", "category": "Jaringan" },
-            { "name": "Git & GitHub", "level": "Terampil", "category": "Kontrol Versi" }
+            {
+              "name": "Figma",
+              "category": "Desain & Prototipe"
+            },
+            {
+              "name": "Wireframing",
+              "category": "Struktur Layout"
+            },
+            {
+              "name": "Prototyping",
+              "category": "Alur Interaksi"
+            },
+            {
+              "name": "Design Systems",
+              "category": "Spesifikasi UI"
+            }
           ]
         }
       ],
@@ -88,67 +107,62 @@
         "Tailwind CSS",
         "JavaScript",
         "Figma",
-        "Desain UI/UX",
-        "Dukungan IT"
+        "UI/UX Design"
       ]
     },
     "projects": [
       {
         "id": "e-library-landing",
         "title": "E-Library Landing Page",
-        "tagline": "Landing page dan antarmuka perpustakaan digital interaktif",
-        "description": "Landing page platform perpustakaan digital, dikerjakan sebagai proyek magang UI/UX dan Front-End di Penerbit Erlangga. Halaman memperkenalkan koleksi e-book melalui marquee sampul, enam blok fitur, bagian manfaat, testimoni, dan tautan unduh aplikasi. Dibangun dengan React, Tailwind CSS, Framer Motion, dan Lenis untuk pergerakan halaman yang halus.",
-        "category": "Landing Page & Perpustakaan Digital",
-        "tags": ["React", "Vite", "Tailwind CSS", "Framer Motion", "Lenis"],
+        "tagline": "Landing page untuk platform digital library",
+        "description": "Dibuat waktu magang di Penerbit Erlangga untuk mengenalkan layanan digital library mereka ke pembaca baru. Flow halamannya saya buat ringkas: preview katalog buku, filter kategori, ulasan pembaca, sampai tombol download aplikasi, biar pengunjung langsung paham fiturnya.",
+        "category": "Frontend Development & UI/UX",
+        "tags": [
+          "React",
+          "Tailwind CSS",
+          "Framer Motion",
+          "Lenis"
+        ],
         "features": [
-          "Marquee sampul buku berjalan sebagai pembuka halaman utama",
-          "Enam blok fitur produk dengan animasi masuk dan hover berbasis Framer Motion",
-          "Carousel testimoni serta bagian unduh App Store dan Play Store",
-          "Scroll halus dengan Lenis dan ilustrasi Lottie sebagai pendukung visual",
-          "Tata letak responsif dari layar ponsel hingga desktop"
+          "Preview koleksi buku digital berdasarkan kategori populer",
+          "Pencarian cepat plus filter kategori, biar cari buku lebih gampang",
+          "Ulasan pembaca dan tombol download aplikasi yang jelas",
+          "Layout responsive yang enak dibaca di desktop maupun HP"
         ],
         "demoUrl": "https://e-library-beta-azure.vercel.app/",
         "githubUrl": "https://github.com/yes4ya/E-Library",
-        "primaryActionLabel": "Buka Live Demo",
-        "featured": true
-      },
-      {
-        "id": "flowerful-website",
-        "title": "Flowerful Website",
-        "tagline": "Katalog bunga interaktif dengan prototipe Figma yang dapat ditelusuri",
-        "description": "Perancangan UI/UX untuk katalog bunga interaktif. Pengunjung menelusuri koleksi buket dan dekorasi floral, membuka detail tiap item, dan berpindah antarhalaman lewat prototipe Figma yang dapat diklik. Fokus pengerjaan pada struktur katalog, konsistensi komponen, dan kejelasan navigasi.",
-        "category": "UI/UX & Prototipe Interaktif",
-        "tags": ["Figma", "UI/UX Design", "Interactive Prototype", "Design System", "Floristry Catalog"],
-        "features": [
-          "Struktur katalog untuk menelusuri koleksi buket dan dekorasi floral",
-          "Halaman detail item dengan galeri visual dan pilihan varian",
-          "Prototipe alur navigasi yang dapat diklik dari beranda ke halaman detail",
-          "Sistem komponen dan token desain yang konsisten di seluruh halaman",
-          "Pratinjau interaktif langsung melalui kanvas Figma Embed"
-        ],
-        "demoUrl": "https://www.figma.com/proto/J4u82HyvfXkMf6lj25J8bM/Flowerful-Website?node-id=158-546&p=f&t=3Uui2HUbXcfz9oyd-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=158%3A546",
-        "figmaUrl": "https://www.figma.com/proto/J4u82HyvfXkMf6lj25J8bM/Flowerful-Website?node-id=158-546&p=f&t=3Uui2HUbXcfz9oyd-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=158%3A546",
-        "embedUrl": "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FJ4u82HyvfXkMf6lj25J8bM%2FFlowerful-Website%3Fnode-id%3D158-546%26p%3Df%26t%3D3Uui2HUbXcfz9oyd-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D0%253A1%26starting-point-node-id%3D158%253A546",
-        "primaryActionLabel": "Buka Prototipe Figma",
-        "hasEmbed": true,
-        "featured": true
+        "primaryActionLabel": "Buka Demo Langsung",
+        "featured": true,
+        "hasPreview": true,
+        "annotations": [
+          {
+            "id": "book-preview",
+            "label": "Preview sampul buku",
+            "detail": "Sampul buku jalan sendiri di bagian atas, jadi pengunjung bisa memindai koleksi tanpa harus klik pagination."
+          },
+          {
+            "id": "lenis",
+            "label": "Smooth scroll Lenis",
+            "detail": "Lenis menggantikan lompatan scroll bawaan browser, jadi pindah antar bagian terasa halus dan header tidak menutupi teks."
+          },
+          {
+            "id": "motion",
+            "label": "Animasi Framer Motion",
+            "detail": "Blok fitur muncul satu per satu dengan urutan stagger, jadi urutan bacanya jelas tanpa halaman bergerak berlebihan."
+          }
+        ]
       }
     ],
     "education": [
       {
-        "degree": "S.Kom (Sarjana Komputer)",
+        "degree": "S1 Teknik Informatika (S.Kom)",
         "major": "Teknik Informatika",
         "specialization": "Software Engineering",
         "institution": "Universitas Kristen Satya Wacana (UKSW)",
         "location": "Salatiga, Indonesia",
         "startYear": 2022,
         "endYear": 2026,
-        "gpa": "3.53",
-        "highlights": [
-          "Kurikulum inti: Rekayasa Perangkat Lunak, Struktur Data & Algoritma, Pemrograman Web",
-          "Penerapan prinsip modularitas komponen, clean code, dan dokumentasi teknis terstruktur",
-          "Penyelesaian proyek aplikasi praktis berbasis antarmuka pengguna interaktif"
-        ]
+        "gpa": "3.53"
       }
     ],
     "contact": {
@@ -156,90 +170,159 @@
       "email": "yesayaroynugraha@gmail.com",
       "linkedin": "https://www.linkedin.com/in/yesayaroynugraha/",
       "github": "https://github.com/yes4ya",
-      "ctaText": "Hubungi melalui email atau LinkedIn untuk kebutuhan pengembangan antarmuka web, desain UI/UX, dan dukungan teknis."
+      "ctaText": "Terbuka untuk peluang kerja full-time, proyek freelance, atau sekadar ngobrol soal UI/UX design dan frontend."
+    },
+    "ui": {
+      "skipToContent": "Lewati ke konten utama",
+      "mainNav": "Navigasi utama",
+      "kicker": "Portofolio",
+      "contactQuick": "Kontak cepat",
+      "featuredWork": "Proyek Unggulan",
+      "previewMode": "Mode pratinjau",
+      "desktop": "Desktop",
+      "mobile": "Mobile",
+      "inspect": "Inspect UI",
+      "inspectOff": "Nyalakan Inspect UI untuk membaca catatan keputusan desain di E-Library.",
+      "inspectOn": "Pilih penanda pada preview untuk membaca catatannya.",
+      "note": "Catatan",
+      "newTab": "Buka tab baru",
+      "role": "ROLE",
+      "period": "TIMELINE",
+      "technology": "TOOLS",
+      "features": "Rincian Implementasi",
+      "sourceCode": "Kode sumber",
+      "liveDemo": "Buka demo langsung",
+      "stackTitle": "Keahlian",
+      "stackEmpty": "Belum ada kategori keahlian.",
+      "experienceTitle": "Pengalaman",
+      "experienceEmpty": "Belum ada pengalaman kerja yang dicantumkan.",
+      "educationTitle": "Pendidikan",
+      "educationEmpty": "Belum ada riwayat pendidikan.",
+      "contactTitle": "Kontak",
+      "copyEmail": "Salin alamat email",
+      "emailCopied": "Email tersalin",
+      "emailFailed": "Gagal menyalin. Coba salin manual.",
+      "formTitle": "Kirim Pesan",
+      "formHint": "Pesan ini akan dibuka di aplikasi email Anda ke",
+      "formSent": "Aplikasi email Anda sudah terbuka. Tekan tombol kirim di sana untuk menyelesaikan pesan.",
+      "writeAnother": "Tulis pesan lain",
+      "nameLabel": "Nama",
+      "emailLabel": "Email",
+      "messageLabel": "Pesan",
+      "sendMessage": "Kirim Pesan",
+      "themeLabel": "Tema tampilan",
+      "themeLight": "Terang",
+      "themeDark": "Gelap",
+      "themeToLight": "Beralih ke tema terang",
+      "themeToDark": "Beralih ke tema gelap",
+      "langLabel": "Pilih bahasa",
+      "menuOpen": "Buka navigasi",
+      "menuClose": "Tutup navigasi",
+      "specialization": "Spesialisasi",
+      "gpa": "IPK",
+      "footerNote": "Dibangun dengan React, Tailwind CSS, dan Framer Motion."
     }
   },
   "en": {
     "personal": {
       "name": "Yesaya Roy Nugraha",
       "nickname": "Yesa",
-      "role": "Front-End Web Developer & UI/UX Designer",
-      "degree": "S.Kom (Bachelor of Computer Science)",
+      "role": "Frontend Developer & UI/UX Designer",
+      "degree": "B.Comp.Sc (S.Kom)",
       "major": "Informatics Engineering",
       "institution": "Universitas Kristen Satya Wacana (UKSW)",
       "specialization": "Software Engineering",
       "location": "Salatiga, Indonesia",
-      "headline": "Front-End Developer & UI/UX Designer",
-      "subheadline": "Informatics Engineering graduate from UKSW (2026) with a Software Engineering specialization and a 3.53 GPA. I build web interfaces with React and Tailwind CSS, design prototypes in Figma, and handle device and basic system troubleshooting.",
-      "bio": "I completed my Bachelor of Computer Science at UKSW in 2026 with a Software Engineering specialization and a 3.53 GPA, after interning as UI/UX and Front-End at Penerbit Erlangga. My work centers on three things: building component-based web interfaces with React and Tailwind CSS, designing flows and prototypes in Figma, and troubleshooting hardware and operating system issues. The algorithms and software engineering foundations from my studies keep the code structure tidy and maintainable.",
-      "status": "Open to full-time roles and project contracts",
-      "photoUrl": "/profile-yesaya-cutout.png",
+      "headline": "Frontend Developer & UI/UX Designer",
+      "subheadline": "Interfaces designed in Figma, then built into responsive websites with React and Tailwind CSS.",
+      "bio": "I design interfaces in Figma, then build them into responsive websites with React and Tailwind CSS. During my internship as a UI/UX & Front-End Intern at Penerbit Erlangga (Sep–Dec 2025), I built the landing page for their digital library platform.",
+      "status": "Open to full-time work and freelance projects",
+      "photoUrl": "",
       "experience": [
         {
           "role": "UI/UX & Front-End Intern",
           "organization": "Penerbit Erlangga",
           "period": "Sep 2025 – Dec 2025",
-          "description": "User needs research, wireframe and Figma prototype design, and React + Tailwind UI implementation for a digital library system."
-        },
-        {
-          "role": "Teaching Assistant",
-          "organization": "Universitas Kristen Satya Wacana (UKSW)",
-          "period": "Aug 2023 – Jan 2024",
-          "description": "Assisted Human-Computer Interaction & Introduction to IT lectures, prepared materials, graded assignments, and facilitated programming labs."
-        },
-        {
-          "role": "IT Support",
-          "organization": "Fakultas Teknik UKSW",
-          "period": "Feb 2023 – Jul 2023",
-          "description": "Hardware diagnostics, OS installation, basic network troubleshooting, and Git/GitHub support for student projects."
+          "description": "Designed the interface and built the landing page for a digital library platform with React.js and Tailwind CSS. Mostly focused on keeping the book catalog layout tidy, light, and easy to navigate at any screen size."
         }
       ],
-      "cvUrl": "/CV-Yesaya-Roy-Nugraha.pdf",
+      "cvUrl": "",
       "email": "yesayaroynugraha@gmail.com",
       "github": "https://github.com/yes4ya",
       "linkedin": "https://www.linkedin.com/in/yesayaroynugraha/"
     },
     "navLinks": [
-      { "name": "About", "href": "#about" },
-      { "name": "Skills", "href": "#skills" },
-      { "name": "Projects", "href": "#projects" },
-      { "name": "Education", "href": "#education" },
-      { "name": "Contact", "href": "#contact" }
+      {
+        "name": "Projects",
+        "href": "#work"
+      },
+      {
+        "name": "Skills",
+        "href": "#stack"
+      },
+      {
+        "name": "Experience",
+        "href": "#experience"
+      },
+      {
+        "name": "Education",
+        "href": "#education"
+      },
+      {
+        "name": "Contact",
+        "href": "#contact"
+      }
     ],
     "skills": {
       "categories": [
         {
-          "categoryName": "Front-End Web Development",
-          "description": "Building modular web interfaces with React and Tailwind CSS.",
+          "categoryName": "Frontend Development",
           "items": [
-            { "name": "React.js", "level": "Advanced", "category": "UI Library" },
-            { "name": "Tailwind CSS", "level": "Advanced", "category": "Utility CSS" },
-            { "name": "Vite", "level": "Advanced", "category": "Build Tool" },
-            { "name": "JavaScript (ES6+)", "level": "Advanced", "category": "Language" },
-            { "name": "HTML5", "level": "Advanced", "category": "Semantic Markup" },
-            { "name": "CSS3", "level": "Advanced", "category": "Styling" },
-            { "name": "Framer Motion", "level": "Proficient", "category": "Animation" }
+            {
+              "name": "React.js",
+              "category": "UI Library"
+            },
+            {
+              "name": "Tailwind CSS",
+              "category": "Utility CSS"
+            },
+            {
+              "name": "Vite",
+              "category": "Build Tool"
+            },
+            {
+              "name": "JavaScript (ES6+)",
+              "category": "Language"
+            },
+            {
+              "name": "HTML5 / CSS3",
+              "category": "Markup"
+            },
+            {
+              "name": "Framer Motion",
+              "category": "Animation"
+            }
           ]
         },
         {
           "categoryName": "UI/UX Design",
-          "description": "Designing flows, wireframes, and interface prototypes in Figma.",
           "items": [
-            { "name": "Figma", "level": "Proficient", "category": "Design & Prototyping" },
-            { "name": "Wireframing", "level": "Proficient", "category": "Layout & Structure" },
-            { "name": "Prototyping", "level": "Proficient", "category": "Interaction Flow" },
-            { "name": "Design Systems", "level": "Proficient", "category": "UI Specs" },
-            { "name": "Responsive Web Design", "level": "Advanced", "category": "Layout & Flow" }
-          ]
-        },
-        {
-          "categoryName": "IT Technical Support",
-          "description": "Hardware, operating system, and basic network diagnostics.",
-          "items": [
-            { "name": "Hardware Diagnostics & Assembly", "level": "Proficient", "category": "Hardware" },
-            { "name": "OS & Software Troubleshooting", "level": "Proficient", "category": "System Support" },
-            { "name": "Basic Networking", "level": "Proficient", "category": "Network" },
-            { "name": "Git & GitHub", "level": "Proficient", "category": "Version Control" }
+            {
+              "name": "Figma",
+              "category": "Design & Prototyping"
+            },
+            {
+              "name": "Wireframing",
+              "category": "Layout Structure"
+            },
+            {
+              "name": "Prototyping",
+              "category": "Interaction Flow"
+            },
+            {
+              "name": "Design Systems",
+              "category": "UI Specs"
+            }
           ]
         }
       ],
@@ -248,67 +331,62 @@
         "Tailwind CSS",
         "JavaScript",
         "Figma",
-        "UI/UX Design",
-        "IT Support"
+        "UI/UX Design"
       ]
     },
     "projects": [
       {
         "id": "e-library-landing",
         "title": "E-Library Landing Page",
-        "tagline": "Interactive digital library landing page and interface",
-        "description": "A digital library landing page built during my UI/UX and Front-End internship at Penerbit Erlangga. The page introduces the e-book collection through a cover marquee, six feature blocks, a benefits section, testimonials, and app download links. Built with React, Tailwind CSS, Framer Motion, and Lenis for smooth page movement.",
-        "category": "Landing Page & Digital Library",
-        "tags": ["React", "Vite", "Tailwind CSS", "Framer Motion", "Lenis"],
+        "tagline": "Landing page for a digital library platform",
+        "description": "Built during my internship at Penerbit Erlangga to introduce their digital library service to new readers. I kept the page flow short: book previews, category filters, reader reviews, then the app download button, so visitors get the features right away.",
+        "category": "Frontend Development & UI/UX",
+        "tags": [
+          "React",
+          "Tailwind CSS",
+          "Framer Motion",
+          "Lenis"
+        ],
         "features": [
-          "A moving book cover marquee opens the main page",
-          "Six product feature blocks with Framer Motion entrance and hover animations",
-          "Testimonial carousel plus App Store and Play Store download sections",
-          "Smooth scrolling with Lenis and Lottie illustrations as visual support",
-          "Responsive layout from phone screens to desktop"
+          "Digital book previews organized by popular categories",
+          "Quick search plus category filters, so finding a book takes less effort",
+          "Reader reviews and a clear app download button",
+          "A responsive layout that reads well on desktop and mobile"
         ],
         "demoUrl": "https://e-library-beta-azure.vercel.app/",
         "githubUrl": "https://github.com/yes4ya/E-Library",
         "primaryActionLabel": "Open Live Demo",
-        "featured": true
-      },
-      {
-        "id": "flowerful-website",
-        "title": "Flowerful Website",
-        "tagline": "Interactive flower catalog with a walkable Figma prototype",
-        "description": "UI/UX design for an interactive flower catalog. Visitors browse a collection of bouquets and floral arrangements, open each item's details, and move between pages through a clickable Figma prototype. The work focused on catalog structure, component consistency, and clear navigation.",
-        "category": "UI/UX & Interactive Prototype",
-        "tags": ["Figma", "UI/UX Design", "Interactive Prototype", "Design System", "Floristry Catalog"],
-        "features": [
-          "Catalog structure for browsing bouquet and floral decoration collections",
-          "Item detail pages with a visual gallery and variant options",
-          "A clickable navigation flow prototype from home to detail pages",
-          "A component system and design tokens consistent across all pages",
-          "Live interactive preview through a Figma embed canvas"
-        ],
-        "demoUrl": "https://www.figma.com/proto/J4u82HyvfXkMf6lj25J8bM/Flowerful-Website?node-id=158-546&p=f&t=3Uui2HUbXcfz9oyd-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=158%3A546",
-        "figmaUrl": "https://www.figma.com/proto/J4u82HyvfXkMf6lj25J8bM/Flowerful-Website?node-id=158-546&p=f&t=3Uui2HUbXcfz9oyd-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=158%3A546",
-        "embedUrl": "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FJ4u82HyvfXkMf6lj25J8bM%2FFlowerful-Website%3Fnode-id%3D158-546%26p%3Df%26t%3D3Uui2HUbXcfz9oyd-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D0%253A1%26starting-point-node-id%3D158%253A546",
-        "primaryActionLabel": "Launch Figma Prototype",
-        "hasEmbed": true,
-        "featured": true
+        "featured": true,
+        "hasPreview": true,
+        "annotations": [
+          {
+            "id": "book-preview",
+            "label": "Book cover preview",
+            "detail": "Book covers scroll on their own at the top, so visitors can scan the collection without clicking through pagination."
+          },
+          {
+            "id": "lenis",
+            "label": "Lenis smooth scroll",
+            "detail": "Lenis replaces the browser's default jump, so moving between sections feels smooth and the header never covers the text."
+          },
+          {
+            "id": "motion",
+            "label": "Framer Motion animation",
+            "detail": "Feature blocks show up one by one with a stagger, so the reading order stays clear without the page moving too much."
+          }
+        ]
       }
     ],
     "education": [
       {
-        "degree": "S.Kom (Bachelor of Computer Science)",
+        "degree": "Bachelor of Computer Science (S.Kom)",
         "major": "Informatics Engineering",
         "specialization": "Software Engineering",
         "institution": "Universitas Kristen Satya Wacana (UKSW)",
         "location": "Salatiga, Indonesia",
         "startYear": 2022,
         "endYear": 2026,
-        "gpa": "3.53",
-        "highlights": [
-          "Core curriculum: Software Engineering, Data Structures & Algorithms, Web Programming",
-          "Applied component modularity, clean code, and structured technical documentation",
-          "Completed practical application projects with interactive user interfaces"
-        ]
+        "gpa": "3.53"
       }
     ],
     "contact": {
@@ -316,7 +394,57 @@
       "email": "yesayaroynugraha@gmail.com",
       "linkedin": "https://www.linkedin.com/in/yesayaroynugraha/",
       "github": "https://github.com/yes4ya",
-      "ctaText": "Reach out by email or LinkedIn for web interface development, UI/UX design, and technical support."
+      "ctaText": "Open to full-time roles, freelance projects, or just a chat about UI/UX design and frontend."
+    },
+    "ui": {
+      "skipToContent": "Skip to main content",
+      "mainNav": "Main navigation",
+      "kicker": "Portfolio",
+      "contactQuick": "Quick contact",
+      "featuredWork": "Featured project",
+      "previewMode": "Preview mode",
+      "desktop": "Desktop",
+      "mobile": "Mobile",
+      "inspect": "Inspect UI",
+      "inspectOff": "Turn on Inspect UI to read the design decisions behind the E-Library build.",
+      "inspectOn": "Pick a marker on the preview to read its note.",
+      "note": "Note",
+      "newTab": "Open in new tab",
+      "role": "ROLE",
+      "period": "TIMELINE",
+      "technology": "TOOLS",
+      "features": "Implementation details",
+      "sourceCode": "Source code",
+      "liveDemo": "Open live demo",
+      "stackTitle": "Skills",
+      "stackEmpty": "No skill categories yet.",
+      "experienceTitle": "Experience",
+      "experienceEmpty": "No work experience listed yet.",
+      "educationTitle": "Education",
+      "educationEmpty": "No education history yet.",
+      "contactTitle": "Contact",
+      "copyEmail": "Copy email address",
+      "emailCopied": "Email copied",
+      "emailFailed": "Copy failed. Try selecting it manually.",
+      "formTitle": "Send a message",
+      "formHint": "This message will open in your email app to",
+      "formSent": "Your email app is now open. Press send there to finish the message.",
+      "writeAnother": "Write another message",
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "messageLabel": "Message",
+      "sendMessage": "Send message",
+      "themeLabel": "Colour theme",
+      "themeLight": "Light",
+      "themeDark": "Dark",
+      "themeToLight": "Switch to light theme",
+      "themeToDark": "Switch to dark theme",
+      "langLabel": "Select language",
+      "menuOpen": "Open navigation",
+      "menuClose": "Close navigation",
+      "specialization": "Specialization",
+      "gpa": "GPA",
+      "footerNote": "Built with React, Tailwind CSS, and Framer Motion."
     }
   }
 }

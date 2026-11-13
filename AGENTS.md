@@ -13,3 +13,15 @@ Only an explicit choice of antislop during or after selects a session mode. A re
 If the mode is unresolved, ask during/after and end the response; wait for the answer before any UI review, planning, or concept. For read-only tasks, put the active-mode notice only at the start of the final answer, never in progress messages. For editing tasks, announce before the first edit and omit it from the final answer.
 To update antislop later: `npx antislop-ai --update`, or run `npx antislop-ai` and pick Overwrite them.
 <!-- antislop:end -->
+
+## Aturan Proyek Permanen
+
+### Tone of Voice (Anti-Slop)
+Gunakan bahasa Indonesia dan Inggris yang natural, ringkas, dan lugas, seperti tulisan desainer produk/engineer manusia. Sebut peran, teknologi, dan konteks nyata, bukan janji pemasaran.
+
+DILARANG memakai kata klise AI berikut di seluruh copy (data JSON, komponen, dan teks UI):
+- passionate, seamless, elevate, cutting-edge, crafting, delve, showcase
+- serta padanannya: AI Powered, Revolutionary, Next Generation, Effortless, Ultimate, Powerful.
+
+### Visual Rule
+Selalu baca `antislop.md` sebelum menulis atau memodifikasi CSS dan komponen UI baru. Setiap keputusan visual (warna, layout, tipografi, spacing, ikon, animasi) harus dapat dijelaskan alasannya dalam satu baris (R-31).

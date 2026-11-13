@@ -3,26 +3,70 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    color-scheme: light;
+    --bg: #FAFAFA;
+    --surface: #FFFFFF;
+    --surface-muted: #F4F4F5;
+    --surface-subtle: #EFEFF1;
+    --border: #E4E4E7;
+    --border-subtle: #EDEDF0;
+    --text: #18181B;
+    --text-secondary: #52525B;
+    --text-muted: #71717A;
+    --accent: #B5442B;
+    --accent-contrast: #FFFFFF;
+  }
+
+  [data-theme='dark'] {
+    color-scheme: dark;
+    --bg: #0C0C0E;
+    --surface: #151518;
+    --surface-muted: #1C1C20;
+    --surface-subtle: #232329;
+    --border: #2A2A30;
+    --border-subtle: #222227;
+    --text: #F4F4F5;
+    --text-secondary: #A1A1AA;
+    --text-muted: #8B8B94;
+    --accent: #E8735A;
+    --accent-contrast: #16161A;
+  }
+
   html {
     scroll-behavior: smooth;
-    color-scheme: dark;
   }
-  
+
+  /* Lenis owns the scroll when it is active. */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
   body {
-    background-color: #000000;
-    color: #ededed;
+    background-color: var(--bg);
+    color: var(--text);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 200ms ease, color 200ms ease;
   }
 
   ::selection {
-    background-color: #333333;
-    color: #ffffff;
+    background-color: var(--text);
+    color: var(--bg);
   }
 
   button,
-  [role="button"],
+  [role='button'],
   summary,
   a[href],
   label[for] {
@@ -30,61 +74,56 @@
   }
 
   :disabled,
-  [aria-disabled="true"] {
+  [aria-disabled='true'] {
     cursor: not-allowed;
   }
 
   :focus-visible {
-    outline: 2px solid #ffffff;
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
 
-  /* Sticky header is 3.5rem tall; keep anchor targets clear of it. */
   section[id] {
-    scroll-margin-top: 4.5rem;
+    scroll-margin-top: 6rem;
   }
 
-  /* Clean minimal scrollbar */
+  /* Scrollbar */
   ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
   }
+
   ::-webkit-scrollbar-track {
-    background: #000000;
+    background: var(--bg);
   }
+
   ::-webkit-scrollbar-thumb {
-    background: #262626;
-    border-radius: 3px;
+    background: var(--border);
+    border-radius: 4px;
   }
+
   ::-webkit-scrollbar-thumb:hover {
-    background: #404040;
+    background: var(--text-muted);
   }
 }
 
-@layer utilities {
-  .reveal {
-    opacity: 0;
-    transform: translateY(10px);
-    transition:
-      opacity 480ms cubic-bezier(0.22, 1, 0.36, 1),
-      transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+@layer components {
+  .accent-soft {
+    background-color: color-mix(in srgb, var(--accent) 10%, transparent);
   }
 
-  .reveal.is-visible {
-    opacity: 1;
-    transform: none;
+  .accent-border {
+    border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+
+  .glass {
+    background-color: color-mix(in srgb, var(--bg) 82%, transparent);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
   }
 
   *,

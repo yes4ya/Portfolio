@@ -1,208 +1,142 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Check, Copy } from 'lucide-react';
+import { EASE_EDITORIAL, useMotionPresets } from '../lib/motion';
 
-const Contact = ({ contact, personal }) => {
-  const [copyState, setCopyState] = useState('idle');
-  const copyTimer = useRef(null);
-  const [sent, setSent] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+const Contact = ({ contact, personal, ui, active = false }) => {
+  const [isCopied, setIsCopied] = useState(false);
+  const [copiedError, setCopiedError] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const { prefersReduced } = useMotionPresets();
 
-  useEffect(() => () => window.clearTimeout(copyTimer.current), []);
-
-  const handleCopy = async () => {
+  const handleCopyEmail = async () => {
     try {
-      await navigator.clipboard.writeText(contact.email);
-      setCopyState('copied');
+      await navigator.clipboard.writeText(personal.email);
+      setIsCopied(true);
+      setCopiedError(false);
+      setTimeout(() => setIsCopied(false), 2500);
     } catch {
-      setCopyState('failed');
+      setCopiedError(true);
     }
-    window.clearTimeout(copyTimer.current);
-    copyTimer.current = window.setTimeout(() => setCopyState('idle'), 2500);
   };
 
-  const copyLabel = {
-    idle: 'Salin alamat email',
-    copied: 'Email tersalin',
-    failed: 'Gagal menyalin, blok manual'
-  }[copyState];
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(`Pesan portofolio dari ${formData.name}`);
-    const body = encodeURIComponent(`${formData.message}\n\nDari: ${formData.name} (${formData.email})`);
-    window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`;
-    setSent(true);
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    setFormSubmitted(true);
   };
 
-  const githubLabel = contact.github.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
-  const linkedinLabel = contact.linkedin.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+  const resetForm = () => setFormSubmitted(false);
 
   return (
-    <section id="contact" className="py-12 sm:py-16 border-b border-surface-border">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          <div className="md:col-span-3">
-            <h2 className="text-xs font-mono uppercase tracking-wider text-typography-muted">
-              Kontak
-            </h2>
-          </div>
+    <section id="contact" className="scroll-mt-24">
+      <div className="flex items-baseline gap-4">
+        <span
+          className={`font-mono text-[11px] tracking-[0.18em] transition-colors duration-500 ${
+            active ? 'text-accent' : 'text-ink-muted'
+          }`}
+        >
+          05
+        </span>
+        <h2 className="font-display text-2xl text-ink sm:text-3xl">{ui.contactTitle}</h2>
+      </div>
 
-          <div className="md:col-span-9 space-y-8">
-            <p className="text-base text-typography-primary leading-relaxed">
-              {contact.ctaText}
-            </p>
+      <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-secondary">
+        {contact.ctaText}
+      </p>
 
-            {/* Direct Contact & Profiles */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-              <div className="p-4 rounded-md border border-surface-border bg-surface">
-                <div className="text-typography-muted mb-1 font-mono uppercase tracking-wider text-[11px]">
-                  Email
-                </div>
-                <div className="font-medium text-white mb-2 break-all">
-                  {contact.email}
-                </div>
-                <button
-                  type="button"
-                  onClick={handleCopy}
-                  className="inline-flex min-h-[44px] items-center font-mono text-[11px] text-typography-secondary hover:text-white underline decoration-surface-border hover:decoration-white transition-colors sm:min-h-0"
-                >
-                  <span aria-live="polite">{copyLabel}</span>
-                </button>
-              </div>
+      {/* Email row */}
+      <div className="mt-6 flex flex-wrap items-center gap-3">
+        <div className="flex min-h-[44px] items-center gap-3 rounded-md border border-line bg-surface px-3 text-sm text-ink">
+          <span className="break-all">{personal.email}</span>
+        </div>
+        <motion.button
+          type="button"
+          onClick={handleCopyEmail}
+          whileTap={prefersReduced ? undefined : { scale: 0.97 }}
+          transition={{ duration: 0.16, ease: EASE_EDITORIAL }}
+          className="inline-flex min-h-[44px] items-center gap-2 rounded-md border border-line px-3 text-sm text-ink transition-colors hover:border-ink"
+          aria-live="polite"
+          aria-label={isCopied ? ui.emailCopied : ui.copyEmail}
+        >
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.span
+              key={isCopied ? 'copied' : 'copy'}
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.85 }}
+              transition={{ duration: prefersReduced ? 0 : 0.16, ease: EASE_EDITORIAL }}
+              className="inline-flex"
+            >
+              {isCopied
+                ? <Check className="h-4 w-4 text-accent" aria-hidden="true" />
+                : <Copy className="h-4 w-4" aria-hidden="true" />}
+            </motion.span>
+          </AnimatePresence>
+          <span>{isCopied ? ui.emailCopied : (copiedError ? ui.emailFailed : ui.copyEmail)}</span>
+        </motion.button>
+      </div>
 
-              <div className="p-4 rounded-md border border-surface-border bg-surface">
-                <div className="text-typography-muted mb-1 font-mono uppercase tracking-wider text-[11px]">
-                  GitHub
-                </div>
-                <div className="font-medium text-white mb-2">
-                  {githubLabel}
-                </div>
-                <a
-                  href={contact.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 font-mono text-[11px] text-typography-secondary hover:text-white underline decoration-surface-border hover:decoration-white transition-colors"
-                >
-                  <span>Buka profil</span>
-                  <ArrowUpRight className="w-3 h-3" />
-                </a>
-              </div>
-
-              <div className="p-4 rounded-md border border-surface-border bg-surface">
-                <div className="text-typography-muted mb-1 font-mono uppercase tracking-wider text-[11px]">
-                  LinkedIn
-                </div>
-                <div className="font-medium text-white mb-2">
-                  {linkedinLabel}
-                </div>
-                <a
-                  href={contact.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 font-mono text-[11px] text-typography-secondary hover:text-white underline decoration-surface-border hover:decoration-white transition-colors"
-                >
-                  <span>Buka profil</span>
-                  <ArrowUpRight className="w-3 h-3" />
-                </a>
-              </div>
-            </div>
-
-            {/* Direct Form */}
-            <div className="p-5 sm:p-6 rounded-lg border border-surface-border bg-surface">
-              <h3 className="text-sm font-semibold text-white mb-1">
-                Kirim Pesan
-              </h3>
-              <p className="text-xs text-typography-muted mb-4">
-                Form ini membuka aplikasi email Anda dengan pesan yang sudah terisi, lalu dikirim ke {contact.email}.
+      {/* Contact form */}
+      <div className="mt-10 border-t border-line pt-8">
+        <AnimatePresence mode="wait" initial={false}>
+          {!formSubmitted ? (
+            <motion.div
+              key="form"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: prefersReduced ? 0 : 0.2, ease: EASE_EDITORIAL }}
+            >
+              <h3 className="font-display text-lg text-ink">{ui.formTitle}</h3>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-secondary">
+                {ui.formHint} <span className="text-ink">{personal.email}</span>
               </p>
 
-              {sent ? (
-                <div className="space-y-3" role="status" aria-live="polite">
-                  <div className="p-4 rounded border border-surface-border bg-surface-muted text-xs text-typography-primary">
-                    Aplikasi email sudah dibuka. Tekan kirim di aplikasi tersebut untuk menyelesaikan pesan.
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setFormData({ name: '', email: '', message: '' });
-                      setSent(false);
-                    }}
-                    className="inline-flex min-h-[44px] items-center font-mono text-[11px] text-typography-secondary hover:text-white underline decoration-surface-border hover:decoration-white transition-colors sm:min-h-0"
-                  >
-                    Tulis pesan lain
-                  </button>
+              <form
+                className="mt-6 space-y-5"
+                onSubmit={handleFormSubmit}
+                action={`mailto:${personal.email}`}
+                method="post"
+                encType="text/plain"
+              >
+                <div>
+                  <label htmlFor="name" className="block text-xs font-medium text-ink-secondary">{ui.nameLabel}</label>
+                  <input type="text" id="name" name="name" required className="mt-1.5 block w-full rounded-md border border-line bg-surface px-3 py-2.5 text-sm text-ink outline-none transition-colors focus:border-ink" />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="contact-name" className="block text-xs font-mono text-typography-secondary mb-1">
-                        Nama
-                      </label>
-                      <input
-                        id="contact-name"
-                        name="name"
-                        type="text"
-                        required
-                        autoComplete="name"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-3 py-2 text-xs rounded bg-surface-muted border border-neutral-500 focus:border-white focus:outline-none text-white placeholder:text-typography-muted"
-                        placeholder="Nama Anda"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="contact-email" className="block text-xs font-mono text-typography-secondary mb-1">
-                        Email
-                      </label>
-                      <input
-                        id="contact-email"
-                        name="email"
-                        type="email"
-                        required
-                        autoComplete="email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-3 py-2 text-xs rounded bg-surface-muted border border-neutral-500 focus:border-white focus:outline-none text-white placeholder:text-typography-muted"
-                        placeholder="nama@email.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="contact-message" className="block text-xs font-mono text-typography-secondary mb-1">
-                      Pesan
-                    </label>
-                    <textarea
-                      id="contact-message"
-                      name="message"
-                      required
-                      rows={4}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-3 py-2 text-xs rounded bg-surface-muted border border-neutral-500 focus:border-white focus:outline-none text-white placeholder:text-typography-muted resize-none"
-                      placeholder="Tuliskan pesan atau kebutuhan proyek..."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="inline-flex min-h-[44px] items-center text-xs font-medium px-4 py-2 rounded bg-white text-black hover:bg-neutral-200 transition-colors sm:min-h-0"
-                  >
-                    Kirim Pesan
-                  </button>
-                </form>
-              )}
-            </div>
-
-          </div>
-        </div>
-
+                <div>
+                  <label htmlFor="email" className="block text-xs font-medium text-ink-secondary">{ui.emailLabel}</label>
+                  <input type="email" id="email" name="email" required className="mt-1.5 block w-full rounded-md border border-line bg-surface px-3 py-2.5 text-sm text-ink outline-none transition-colors focus:border-ink" />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-xs font-medium text-ink-secondary">{ui.messageLabel}</label>
+                  <textarea id="message" name="message" rows="4" required className="mt-1.5 block w-full rounded-md border border-line bg-surface px-3 py-2.5 text-sm text-ink outline-none transition-colors focus:border-ink" />
+                </div>
+                <motion.button
+                  type="submit"
+                  whileTap={prefersReduced ? undefined : { scale: 0.98 }}
+                  transition={{ duration: 0.16, ease: EASE_EDITORIAL }}
+                  className="inline-flex min-h-[44px] items-center gap-2 rounded-md bg-ink px-4 text-sm text-canvas transition-opacity hover:opacity-90"
+                >
+                  {ui.sendMessage}
+                </motion.button>
+              </form>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="sent"
+              initial={{ opacity: 0, y: prefersReduced ? 0 : 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: prefersReduced ? 0 : 0.3, ease: EASE_EDITORIAL }}
+            >
+              <h3 className="font-display text-lg text-ink">{ui.formSent}</h3>
+              <p className="mt-2 text-sm text-ink-secondary">{ui.formHint} {personal.email}</p>
+              <button type="button" onClick={resetForm} className="mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-md border border-line px-4 text-sm text-ink transition-colors hover:border-ink">
+                {ui.writeAnother}
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
