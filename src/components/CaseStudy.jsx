@@ -325,27 +325,8 @@ const CaseStudy = ({ project, roleInfo, ui, lang = 'id', active = false }) => {
     <section id="work" ref={sectionRef} className="scroll-mt-24">
       <SectionLabel number="01" title={ui.featuredWork} active={active} />
       <div className="mt-8">
-              <h3 className="font-sans text-3xl font-bold tracking-tight text-ink sm:text-4xl">{project.title}</h3>
-              <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-ink-secondary">{project.description}</p>
-            </div>
-
-            <div className="mt-10 grid grid-cols-2 gap-6 border-y border-line py-6 sm:grid-cols-4">
-              <div>
-                <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-muted">{ui.timelineLabel}</span>
-                <p className="mt-1 font-mono text-xs text-ink">{project.timeline}</p>
-              </div>
-              <div className="col-span-2 sm:col-span-2">
-                <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink-muted">{ui.toolsLabel}</span>
-          <ul className="mt-1.5 flex flex-wrap gap-1.5">
-            {(project.tools || []).map((t) => (
-              <li key={t}>
-                <span className="inline-flex min-h-[28px] items-center rounded-md border border-line bg-surface px-2.5 font-mono text-[11px] text-ink">
-                  {t}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <h3 className="font-sans text-3xl font-bold tracking-tight text-ink sm:text-4xl">{project.title}</h3>
+        <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-ink-secondary">{project.description}</p>
       </div>
 
       <motion.div
