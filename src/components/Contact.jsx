@@ -1,142 +1,160 @@
 import React, { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Check, Copy } from 'lucide-react';
-import { EASE_EDITORIAL, useMotionPresets } from '../lib/motion';
+import { motion } from 'framer-motion';
+import { ArrowUpRight, Copy, Check, Github, Linkedin, Mail, Send } from 'lucide-react';
 
-const Contact = ({ contact, personal, ui, active = false }) => {
-  const [isCopied, setIsCopied] = useState(false);
-  const [copiedError, setCopiedError] = useState(false);
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const { prefersReduced } = useMotionPresets();
+const Contact = ({ contact, personal, ui, active = false, lang = 'id' }) => {
+  const [copied, setCopied] = useState(false);
+  const [status, setStatus] = useState('');
+  const email = personal.email || contact.email || 'yesayaroynugraha@gmail.com';
 
-  const handleCopyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(personal.email);
-      setIsCopied(true);
-      setCopiedError(false);
-      setTimeout(() => setIsCopied(false), 2500);
-    } catch {
-      setCopiedError(true);
-    }
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    setFormSubmitted(true);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus('sent');
+    setTimeout(() => setStatus(''), 4000);
   };
-
-  const resetForm = () => setFormSubmitted(false);
 
   return (
     <section id="contact" className="scroll-mt-24">
       <div className="flex items-baseline gap-4">
-        <span
-          className={`font-mono text-[11px] tracking-[0.18em] transition-colors duration-500 ${
-            active ? 'text-accent' : 'text-ink-muted'
-          }`}
-        >
-          05
-        </span>
-        <h2 className="font-display text-2xl text-ink sm:text-3xl">{ui.contactTitle}</h2>
+        <span className={`font-mono text-[11px] tracking-[0.18em] transition-colors duration-500 ${active ? 'text-accent' : 'text-ink-muted'}`}>05</span>
+        <h2 className="font-sans text-2xl font-bold tracking-tight text-ink sm:text-3xl">{ui.contactTitle}</h2>
       </div>
 
-      <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-secondary">
-        {contact.ctaText}
-      </p>
-
-      {/* Email row */}
-      <div className="mt-6 flex flex-wrap items-center gap-3">
-        <div className="flex min-h-[44px] items-center gap-3 rounded-md border border-line bg-surface px-3 text-sm text-ink">
-          <span className="break-all">{personal.email}</span>
-        </div>
-        <motion.button
-          type="button"
-          onClick={handleCopyEmail}
-          whileTap={prefersReduced ? undefined : { scale: 0.97 }}
-          transition={{ duration: 0.16, ease: EASE_EDITORIAL }}
-          className="inline-flex min-h-[44px] items-center gap-2 rounded-md border border-line px-3 text-sm text-ink transition-colors hover:border-ink"
-          aria-live="polite"
-          aria-label={isCopied ? ui.emailCopied : ui.copyEmail}
-        >
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.span
-              key={isCopied ? 'copied' : 'copy'}
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.85 }}
-              transition={{ duration: prefersReduced ? 0 : 0.16, ease: EASE_EDITORIAL }}
-              className="inline-flex"
-            >
-              {isCopied
-                ? <Check className="h-4 w-4 text-accent" aria-hidden="true" />
-                : <Copy className="h-4 w-4" aria-hidden="true" />}
-            </motion.span>
-          </AnimatePresence>
-          <span>{isCopied ? ui.emailCopied : (copiedError ? ui.emailFailed : ui.copyEmail)}</span>
-        </motion.button>
-      </div>
-
-      {/* Contact form */}
-      <div className="mt-10 border-t border-line pt-8">
-        <AnimatePresence mode="wait" initial={false}>
-          {!formSubmitted ? (
-            <motion.div
-              key="form"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: prefersReduced ? 0 : 0.2, ease: EASE_EDITORIAL }}
-            >
-              <h3 className="font-display text-lg text-ink">{ui.formTitle}</h3>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-secondary">
-                {ui.formHint} <span className="text-ink">{personal.email}</span>
+      <div className="mt-8 overflow-hidden rounded-3xl border border-line bg-surface shadow-lux">
+        <div className="grid grid-cols-1 lg:grid-cols-12">
+          {/* Left Column (5 cols): Info & One-click Copy Email */}
+          <div className="flex flex-col justify-between border-b border-line p-8 lg:border-b-0 lg:border-r lg:col-span-5">
+            <div>
+              <h3 className="font-sans text-2xl font-bold tracking-tight text-ink sm:text-3xl">
+                {contact.heading || (lang === 'en'
+                  ? 'Got something to build? Let me know.'
+                  : 'Ada yang mau dibangun? Kabarin saya.')}
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-ink-secondary">
+                {contact.description || (lang === 'en'
+                  ? "Whether it's a landing page, a design system, or just a second opinion on your frontend, I'm happy to chat. Drop me a message and I'll reply when I'm back at my desk."
+                  : "Bisa untuk landing page, design system, atau cuma minta second opinion soal frontend kamu, saya senang ngobrol soal itu. Kirim pesan saja, nanti saya balas begitu kembali ke meja kerja.")}
               </p>
+            </div>
 
-              <form
-                className="mt-6 space-y-5"
-                onSubmit={handleFormSubmit}
-                action={`mailto:${personal.email}`}
-                method="post"
-                encType="text/plain"
+            <div className="mt-8 space-y-6">
+              {/* One-click copy email card */}
+              <div
+                onClick={handleCopyEmail}
+                role="button"
+                tabIndex={0}
+                className="group flex  items-center justify-between rounded-2xl border border-line bg-canvas p-4 transition-colors hover:border-accent/50"
               >
-                <div>
-                  <label htmlFor="name" className="block text-xs font-medium text-ink-secondary">{ui.nameLabel}</label>
-                  <input type="text" id="name" name="name" required className="mt-1.5 block w-full rounded-md border border-line bg-surface px-3 py-2.5 text-sm text-ink outline-none transition-colors focus:border-ink" />
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-line bg-surface text-accent">
+                    <Mail className="h-4 w-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="block font-mono text-[10px] uppercase tracking-wider text-ink-muted">Direct Email</span>
+                    <span className="block truncate font-mono text-xs font-medium text-ink">{email}</span>
+                  </div>
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-xs font-medium text-ink-secondary">{ui.emailLabel}</label>
-                  <input type="email" id="email" name="email" required className="mt-1.5 block w-full rounded-md border border-line bg-surface px-3 py-2.5 text-sm text-ink outline-none transition-colors focus:border-ink" />
+                <div className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line bg-surface text-ink-secondary transition-colors group-hover:border-accent group-hover:text-accent">
+                  {copied ? <Check className="h-4 w-4 text-accent" /> : <Copy className="h-4 w-4" />}
                 </div>
-                <div>
-                  <label htmlFor="message" className="block text-xs font-medium text-ink-secondary">{ui.messageLabel}</label>
-                  <textarea id="message" name="message" rows="4" required className="mt-1.5 block w-full rounded-md border border-line bg-surface px-3 py-2.5 text-sm text-ink outline-none transition-colors focus:border-ink" />
-                </div>
-                <motion.button
-                  type="submit"
-                  whileTap={prefersReduced ? undefined : { scale: 0.98 }}
-                  transition={{ duration: 0.16, ease: EASE_EDITORIAL }}
-                  className="inline-flex min-h-[44px] items-center gap-2 rounded-md bg-ink px-4 text-sm text-canvas transition-opacity hover:opacity-90"
+              </div>
+
+              {/* Social links */}
+              <div className="flex items-center gap-3">
+                <a
+                  href={personal.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[40px] items-center gap-2 rounded-xl border border-line bg-canvas px-4 font-mono text-xs text-ink transition-colors hover:border-accent hover:text-accent"
                 >
-                  {ui.sendMessage}
-                </motion.button>
-              </form>
-            </motion.div>
-          ) : (
-            <motion.div
-              key="sent"
-              initial={{ opacity: 0, y: prefersReduced ? 0 : 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: prefersReduced ? 0 : 0.3, ease: EASE_EDITORIAL }}
-            >
-              <h3 className="font-display text-lg text-ink">{ui.formSent}</h3>
-              <p className="mt-2 text-sm text-ink-secondary">{ui.formHint} {personal.email}</p>
-              <button type="button" onClick={resetForm} className="mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-md border border-line px-4 text-sm text-ink transition-colors hover:border-ink">
-                {ui.writeAnother}
-              </button>
-            </motion.div>
-          )}
-        </AnimatePresence>
+                  <Github className="h-4 w-4" />
+                  <span>GitHub</span>
+                  <ArrowUpRight className="h-3 w-3 text-ink-muted" />
+                </a>
+                <a
+                  href={personal.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[40px] items-center gap-2 rounded-xl border border-line bg-canvas px-4 font-mono text-xs text-ink transition-colors hover:border-accent hover:text-accent"
+                >
+                  <Linkedin className="h-4 w-4" />
+                  <span>LinkedIn</span>
+                  <ArrowUpRight className="h-3 w-3 text-ink-muted" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column (7 cols): Message Form */}
+          <div className="p-8 lg:col-span-7">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block font-mono text-xs uppercase tracking-wider text-ink-muted">
+                  {ui.nameLabel || 'Nama Lengkap'}
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  placeholder={lang === 'en' ? 'Your name' : 'Nama kamu'}
+                  className="mt-2 w-full rounded-xl border border-line bg-canvas px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-accent"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block font-mono text-xs uppercase tracking-wider text-ink-muted">
+                  {ui.emailLabel || 'Alamat Email'}
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  placeholder="name@example.com"
+                  className="mt-2 w-full rounded-xl border border-line bg-canvas px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-accent"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block font-mono text-xs uppercase tracking-wider text-ink-muted">
+                  {ui.messageLabel || 'Pesan Anda'}
+                </label>
+                <textarea
+                  id="message"
+                  required
+                  rows={4}
+                  placeholder="Tuliskan detail project atau pesan Anda di sini..."
+                  className="mt-2 w-full rounded-xl border border-line bg-canvas px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-accent resize-none"
+                />
+              </div>
+
+              <div className="flex items-center justify-between pt-2">
+                <button
+                  type="submit"
+                  className="inline-flex min-h-[48px] items-center gap-2 rounded-full bg-accent px-6 text-sm font-medium text-accent-contrast transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                >
+                  <span>{ui.sendButton || 'Kirim Pesan'}</span>
+                  <Send className="h-4 w-4" aria-hidden="true" />
+                </button>
+
+                {status === 'sent' && (
+                  <motion.span
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="font-mono text-xs text-accent font-medium"
+                  >
+                    ✓ Pesan terkirim dengan sukses!
+                  </motion.span>
+                )}
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -5,7 +5,7 @@ import useActiveSection from '../hooks/useActiveSection';
 import { scrollToTarget, scrollToTop } from '../lib/smoothScroll';
 
 const SECTIONS = [
-  { id: 'work', number: '01', label: { id: 'Proyek', en: 'Projects' } },
+  { id: 'work', number: '01', label: { id: 'Project', en: 'Projects' } },
   { id: 'stack', number: '02', label: { id: 'Keahlian', en: 'Skills' } },
   { id: 'experience', number: '03', label: { id: 'Pengalaman', en: 'Experience' } },
   { id: 'education', number: '04', label: { id: 'Pendidikan', en: 'Education' } },

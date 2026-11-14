@@ -5,32 +5,34 @@
 @layer base {
   :root {
     color-scheme: light;
-    --bg: #FAFAFA;
+    --bg: #F6F9F6;
     --surface: #FFFFFF;
-    --surface-muted: #F4F4F5;
-    --surface-subtle: #EFEFF1;
-    --border: #E4E4E7;
-    --border-subtle: #EDEDF0;
-    --text: #18181B;
-    --text-secondary: #52525B;
-    --text-muted: #71717A;
-    --accent: #B5442B;
+    --surface-muted: #E6F2E8;
+    --surface-subtle: #D5E4D8;
+    --border: #D5E4D8;
+    --border-subtle: #C2D8C7;
+    --text: #112217;
+    --text-secondary: #475E4E;
+    --text-muted: #6B8773;
+    --accent: #2E6F40;
+    --accent-secondary: #40916C;
     --accent-contrast: #FFFFFF;
   }
 
   [data-theme='dark'] {
     color-scheme: dark;
-    --bg: #0C0C0E;
-    --surface: #151518;
-    --surface-muted: #1C1C20;
-    --surface-subtle: #232329;
-    --border: #2A2A30;
-    --border-subtle: #222227;
-    --text: #F4F4F5;
-    --text-secondary: #A1A1AA;
-    --text-muted: #8B8B94;
-    --accent: #E8735A;
-    --accent-contrast: #16161A;
+    --bg: #0B140E;
+    --surface: #132118;
+    --surface-muted: #1B3022;
+    --surface-subtle: #233D2C;
+    --border: #233D2C;
+    --border-subtle: #2D4D38;
+    --text: #EFF7F1;
+    --text-secondary: #9AB3A1;
+    --text-muted: #739380;
+    --accent: #4ADE80;
+    --accent-secondary: #52B788;
+    --accent-contrast: #0B140E;
   }
 
   html {
@@ -133,5 +135,23 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Final cursor suppression: universal, high priority, inside Tailwind utilities layer */
+@layer utilities {
+  @media (pointer: fine) {
+    html, body, *, *::before, *::after,
+    a, a:hover, a:active, a:focus,
+    button, button:hover, button:active, button:focus,
+    [role="button"], [role="button"]:hover,
+    span, p, h1, h2, h3, h4, h5, h6,
+    label, select {
+      cursor: none !important;
+    }
+
+    input, textarea, [contenteditable="true"] {
+      cursor: text !important;
+    }
   }
 }

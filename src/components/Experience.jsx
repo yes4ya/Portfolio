@@ -3,7 +3,7 @@ import React from 'react';
 const SectionHeading = ({ number, title, active }) => (
   <div className="flex items-baseline gap-4">
     <span className={`font-mono text-[11px] tracking-[0.18em] transition-colors duration-500 ${active ? 'text-accent' : 'text-ink-muted'}`}>{number}</span>
-    <h2 className="font-display text-2xl text-ink sm:text-3xl">{title}</h2>
+    <h2 className="font-sans text-2xl font-bold tracking-tight text-ink sm:text-3xl">{title}</h2>
   </div>
 );
 
@@ -22,7 +22,7 @@ const Experience = ({ experience, ui, active = false }) => {
                 <p className="mt-1 text-sm text-ink-secondary">{item.organization}</p>
               </div>
               <div>
-                <h3 className="font-display text-xl text-ink">{item.role}</h3>
+                <h3 className="font-sans text-xl font-bold tracking-tight text-ink">{item.role}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-secondary">{item.description}</p>
               </div>
             </li>

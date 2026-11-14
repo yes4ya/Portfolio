@@ -1,7 +1,56 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from 'lucide-react';
-import { useMotionPresets } from '../lib/motion';
+import React, { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowUpRight, Check, Copy, Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { EASE_EDITORIAL, useMotionPresets } from '../lib/motion';
+
+const CopyEmailLink = ({ email, ui }) => {
+  const [copied, setCopied] = useState(false);
+  const { prefersReduced } = useMotionPresets();
+
+  const handleCopy = async (event) => {
+    event.preventDefault();
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      // Clipboard blocked; the mailto link still works.
+    }
+  };
+
+  return (
+    <div className="group relative inline-flex items-center">
+      <button
+        type="button"
+        onClick={handleCopy}
+        className="inline-flex items-center gap-2.5 text-sm text-ink transition-colors hover:text-accent"
+        aria-label={copied ? ui.emailCopied : ui.copyEmail}
+      >
+        <span className="inline-flex h-4 w-4 shrink-0 items-center justify-center text-ink-muted transition-colors group-hover:text-accent">
+          {copied
+            ? <Check className="h-4 w-4 text-accent" aria-hidden="true" />
+            : <Copy className="h-4 w-4" aria-hidden="true" />}
+        </span>
+        <span className="break-all">{email}</span>
+      </button>
+
+      <AnimatePresence>
+        {copied && (
+          <motion.span
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 6 }}
+            transition={{ duration: prefersReduced ? 0 : 0.2, ease: EASE_EDITORIAL }}
+            role="status"
+            className="absolute left-1/2 top-full z-10 mt-1.5 -translate-x-1/2 whitespace-nowrap rounded-md border border-line bg-surface px-2 py-1 text-xs text-ink shadow-sm"
+          >
+            {ui.emailCopied}
+          </motion.span>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const ContactLink = ({ href, icon: Icon, label, external = false }) => (
   <a
@@ -78,7 +127,7 @@ const Sidebar = ({ personal, ui }) => {
       >
         <ul className="space-y-3.5">
           <li>
-            <ContactLink href={`mailto:${personal.email}`} icon={Mail} label={personal.email} />
+            <CopyEmailLink email={personal.email} ui={ui} />
           </li>
           <li>
             <ContactLink href={personal.github} icon={Github} label="GitHub" external />

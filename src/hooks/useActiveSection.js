@@ -22,7 +22,9 @@ const useActiveSection = (ids) => {
         return;
       }
 
-      const line = 120;
+      // Reading line sits ~35% down the viewport: a section becomes active
+      // once its heading crosses the upper third, not just past the header.
+      const line = Math.max(160, window.innerHeight * 0.35);
       let current = null;
       for (const id of ids) {
         const el = document.getElementById(id);

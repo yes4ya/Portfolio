@@ -13,7 +13,7 @@ const LanguageToggle = ({ lang, setLang, ui }) => {
     <div
       role="group"
       aria-label={ui.langLabel}
-      className="inline-flex items-center gap-0.5 rounded-md border border-line bg-surface p-0.5"
+      className="inline-flex items-center rounded-md border border-line bg-surface p-0.5"
     >
       {['id', 'en'].map((code) => {
         const isActive = lang === code;
@@ -24,7 +24,7 @@ const LanguageToggle = ({ lang, setLang, ui }) => {
             onClick={() => setLang(code)}
             whileTap={prefersReduced ? undefined : { scale: 0.96 }}
             aria-pressed={isActive}
-            className={`relative inline-flex min-h-[36px] min-w-[32px] items-center justify-center rounded px-2 text-xs transition-colors ${
+            className={`relative inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded px-3.5 text-xs transition-colors ${
               isActive ? 'text-canvas' : 'text-ink-muted hover:text-ink'
             }`}
           >
@@ -113,46 +113,24 @@ const Navbar = ({ personal, navLinks, lang, setLang, ui }) => {
     <header
       className={`sticky top-0 z-50 transition-colors duration-300 ${
         scrolled
-          ? 'border-b border-line glass backdrop-blur-md'
+          ? 'border-b border-line/50 glass backdrop-blur-md'
           : 'border-b border-transparent bg-canvas'
       }`}
     >
-      <div className="mx-auto grid h-16 max-w-[1440px] grid-cols-[1fr_auto_1fr] items-center gap-3 px-5 sm:px-8">
-        <div className="flex min-w-0 items-center">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
+        <div className="flex items-center">
           <a
             href="#main"
             onClick={(event) => handleNavigate(event, 'main')}
-            className="inline-flex min-h-[44px] min-w-0 items-center gap-2 font-display text-lg text-ink transition-colors hover:text-accent"
+            className="inline-flex items-center gap-2 font-sans text-xl font-bold text-ink tracking-tight"
           >
-            <span className="truncate sm:hidden">{personal.nickname}</span>
-            <span className="hidden truncate sm:inline">{personal.name}</span>
-
-            <span
-              aria-hidden="true"
-              className="hidden font-mono text-[11px] text-ink-muted lg:inline"
-            >
-              /
-            </span>
-            <span className="relative hidden h-4 w-[112px] shrink-0 items-center overflow-hidden lg:inline-flex">
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.span
-                  key={subtitle}
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -6 }}
-                  transition={reduceMotion ? { duration: 0 } : { duration: 0.2, ease: EASE_EDITORIAL }}
-                  className="whitespace-nowrap font-mono text-[11px] uppercase tracking-widest text-ink-muted"
-                >
-                  {subtitle}
-                </motion.span>
-              </AnimatePresence>
-            </span>
+            yesaya.nugraha
           </a>
         </div>
 
         <nav
           aria-label={ui.mainNav}
-          className="hidden items-center justify-center gap-0.5 lg:flex xl:gap-2"
+          className="hidden items-center justify-center gap-1 lg:flex"
         >
           {navLinks.map((link) => (
             <NavItem
@@ -165,24 +143,9 @@ const Navbar = ({ personal, navLinks, lang, setLang, ui }) => {
           ))}
         </nav>
 
-        {/* Right: language pill + compact theme icon. The chapter rail sits
-            mid-screen, so the header needs no extra right padding. */}
-        <div className="flex items-center justify-end gap-2 md:gap-3">
-          <div className="hidden md:block">
-            <LanguageToggle lang={lang} setLang={setLang} ui={ui} />
-          </div>
+        <div className="flex items-center gap-2">
+          <LanguageToggle lang={lang} setLang={setLang} ui={ui} />
           <ThemeToggle ui={ui} />
-
-          <button
-            type="button"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? ui.menuClose : ui.menuOpen}
-            aria-expanded={isOpen}
-            aria-controls="mobile-navigation"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-line text-ink-secondary transition-colors hover:text-ink lg:hidden"
-          >
-            {isOpen ? <X className="h-4 w-4" aria-hidden="true" /> : <Menu className="h-4 w-4" aria-hidden="true" />}
-          </button>
         </div>
       </div>
 

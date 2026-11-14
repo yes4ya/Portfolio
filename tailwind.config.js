@@ -8,6 +8,10 @@ export default {
       transitionTimingFunction: {
         editorial: 'cubic-bezier(0.22, 1, 0.36, 1)'
       },
+      boxShadow: {
+        lux: '0 10px 30px -10px rgba(20, 20, 19, 0.05), 0 2px 6px -1px rgba(20, 20, 19, 0.02)',
+        'lux-lg': '0 24px 50px -12px rgba(20, 20, 19, 0.09), 0 8px 16px -4px rgba(20, 20, 19, 0.03)'
+      },
       colors: {
         canvas: 'var(--bg)',
         surface: {
@@ -26,13 +30,14 @@ export default {
         },
         accent: {
           DEFAULT: 'var(--accent)',
+          secondary: 'var(--accent-secondary)',
           contrast: 'var(--accent-contrast)'
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Fraunces', 'Georgia', 'serif'],
-        mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+        display: ['Archivo Black', 'sans-serif'],
+        sans: ['Space Grotesk', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace']
       },
       letterSpacing: {
         editorial: '0.18em'

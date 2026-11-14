@@ -9,17 +9,17 @@
       "institution": "Universitas Kristen Satya Wacana (UKSW)",
       "specialization": "Software Engineering",
       "location": "Salatiga, Indonesia",
-      "headline": "Frontend Developer & UI/UX Designer",
-      "subheadline": "Desain interface di Figma, lalu dibangun jadi website responsive pakai React dan Tailwind CSS.",
-      "bio": "Saya mendesain tampilan di Figma lalu membangunnya jadi website responsive pakai React dan Tailwind CSS. Waktu magang sebagai UI/UX & Front-End Intern di Penerbit Erlangga (Sep–Des 2025), saya bikin landing page untuk platform digital library mereka.",
-      "status": "Terbuka untuk kerja full-time dan proyek freelance",
+      "headline": "Yesaya Roy Nugraha",
+      "subheadline": "Frontend Developer & UI/UX Designer",
+      "bio": "Saya merancang dan membangun pengalaman digital yang menggabungkan desain intuitif dengan implementasi frontend yang responsif. Berbekal pengalaman di bidang UI/UX Design dan Frontend Development, saya senang mengubah ide dan kebutuhan pengguna menjadi produk digital yang fungsional, menarik, dan mudah digunakan.",
+      "status": "Terbuka untuk kerja full-time dan project freelance",
       "photoUrl": "",
       "experience": [
         {
           "role": "UI/UX & Front-End Intern",
-          "organization": "Penerbit Erlangga",
-          "period": "Sep 2025 – Des 2025",
-          "description": "Mendesain interface sekaligus membangun landing page platform digital library pakai React.js dan Tailwind CSS. Fokus menjaga layout katalog buku tetap rapi, ringan, dan gampang dinavigasi di berbagai ukuran layar."
+          "organization": "PT Penerbit Erlangga",
+          "period": "September 2025 – Desember 2025",
+          "description": "Berperan dalam pengembangan antarmuka platform digital melalui proses transformasi desain high-fidelity Figma menjadi implementasi frontend. Terlibat dalam pengembangan website menggunakan React.js dan Tailwind CSS, serta penerapan animasi dan interaksi untuk meningkatkan kualitas pengalaman pengguna."
         }
       ],
       "cvUrl": "",
@@ -29,7 +29,7 @@
     },
     "navLinks": [
       {
-        "name": "Proyek",
+        "name": "Project",
         "href": "#work"
       },
       {
@@ -56,11 +56,11 @@
           "items": [
             {
               "name": "React.js",
-              "category": "Library UI"
+              "category": "UI Library"
             },
             {
               "name": "Tailwind CSS",
-              "category": "CSS Utilitas"
+              "category": "Utility CSS"
             },
             {
               "name": "Vite",
@@ -68,15 +68,15 @@
             },
             {
               "name": "JavaScript (ES6+)",
-              "category": "Bahasa"
+              "category": "Language"
             },
             {
-              "name": "HTML5 / CSS3",
+              "name": "HTML5 & CSS3",
               "category": "Markup"
             },
             {
               "name": "Framer Motion",
-              "category": "Animasi"
+              "category": "Animation"
             }
           ]
         },
@@ -85,19 +85,19 @@
           "items": [
             {
               "name": "Figma",
-              "category": "Desain & Prototipe"
+              "category": "Design & Prototyping"
             },
             {
-              "name": "Wireframing",
-              "category": "Struktur Layout"
+              "name": "UI/UX Design",
+              "category": "User Research"
             },
             {
               "name": "Prototyping",
-              "category": "Alur Interaksi"
+              "category": "Interaction Flow"
             },
             {
               "name": "Design Systems",
-              "category": "Spesifikasi UI"
+              "category": "UI Specs"
             }
           ]
         }
@@ -114,8 +114,8 @@
       {
         "id": "e-library-landing",
         "title": "E-Library Landing Page",
-        "tagline": "Landing page untuk platform digital library",
-        "description": "Dibuat waktu magang di Penerbit Erlangga untuk mengenalkan layanan digital library mereka ke pembaca baru. Flow halamannya saya buat ringkas: preview katalog buku, filter kategori, ulasan pembaca, sampai tombol download aplikasi, biar pengunjung langsung paham fiturnya.",
+        "tagline": "",
+        "description": "Mengimplementasikan desain antarmuka platform E-Book ke dalam website responsif menggunakan React.js dan Tailwind CSS. Project ini berfokus pada penerjemahan desain high-fidelity dari Figma menjadi pengalaman digital yang interaktif, dengan navigasi intuitif dan tampilan yang adaptif di berbagai ukuran layar.",
         "category": "Frontend Development & UI/UX",
         "tags": [
           "React",
@@ -124,10 +124,10 @@
           "Lenis"
         ],
         "features": [
-          "Preview koleksi buku digital berdasarkan kategori populer",
-          "Pencarian cepat plus filter kategori, biar cari buku lebih gampang",
-          "Ulasan pembaca dan tombol download aplikasi yang jelas",
-          "Layout responsive yang enak dibaca di desktop maupun HP"
+          "Menerjemahkan desain high-fidelity Figma menjadi antarmuka website.",
+          "Mengembangkan komponen UI menggunakan React.js dan Tailwind CSS.",
+          "Mengimplementasikan animasi dan interaksi menggunakan Framer Motion.",
+          "Mengoptimalkan tampilan responsif untuk desktop dan perangkat mobile."
         ],
         "demoUrl": "https://e-library-beta-azure.vercel.app/",
         "githubUrl": "https://github.com/yes4ya/E-Library",
@@ -138,30 +138,30 @@
           {
             "id": "book-preview",
             "label": "Preview sampul buku",
-            "detail": "Sampul buku jalan sendiri di bagian atas, jadi pengunjung bisa memindai koleksi tanpa harus klik pagination."
+            "detail": "Sampul buku berjalan secara otomatis di bagian atas, memudahkan pengguna memindai katalog tanpa pagination."
           },
           {
             "id": "lenis",
             "label": "Smooth scroll Lenis",
-            "detail": "Lenis menggantikan lompatan scroll bawaan browser, jadi pindah antar bagian terasa halus dan header tidak menutupi teks."
+            "detail": "Mengganti lompatan scroll default browser dengan transisi yang halus dan presisi."
           },
           {
             "id": "motion",
             "label": "Animasi Framer Motion",
-            "detail": "Blok fitur muncul satu per satu dengan urutan stagger, jadi urutan bacanya jelas tanpa halaman bergerak berlebihan."
+            "detail": "Blok konten muncul berurutan dengan efek stagger yang elegan dan natural."
           }
         ]
       }
     ],
     "education": [
       {
-        "degree": "S1 Teknik Informatika (S.Kom)",
+        "degree": "S1 Teknik Informatika",
         "major": "Teknik Informatika",
         "specialization": "Software Engineering",
         "institution": "Universitas Kristen Satya Wacana (UKSW)",
         "location": "Salatiga, Indonesia",
         "startYear": 2022,
-        "endYear": 2026,
+        "endYear": "Sekarang",
         "gpa": "3.53"
       }
     ],
@@ -170,14 +170,16 @@
       "email": "yesayaroynugraha@gmail.com",
       "linkedin": "https://www.linkedin.com/in/yesayaroynugraha/",
       "github": "https://github.com/yes4ya",
-      "ctaText": "Terbuka untuk peluang kerja full-time, proyek freelance, atau sekadar ngobrol soal UI/UX design dan frontend."
+      "ctaText": "Saya terbuka untuk kesempatan kerja, kolaborasi project, maupun diskusi seputar desain dan pengembangan produk digital. Punya project atau peluang menarik? Mari mulai percakapan.",
+      "heading": "Ada ide menarik yang ingin diwujudkan?",
+      "description": "Saya terbuka untuk kesempatan kerja, kolaborasi project, maupun diskusi seputar desain dan pengembangan produk digital. Punya project atau peluang menarik? Mari mulai percakapan."
     },
     "ui": {
       "skipToContent": "Lewati ke konten utama",
       "mainNav": "Navigasi utama",
-      "kicker": "Portofolio",
+      "kicker": "FRONTEND DEVELOPER & UI/UX DESIGNER · SALATIGA, INDONESIA",
       "contactQuick": "Kontak cepat",
-      "featuredWork": "Proyek Unggulan",
+      "featuredWork": "Project",
       "previewMode": "Mode pratinjau",
       "desktop": "Desktop",
       "mobile": "Mobile",
@@ -186,12 +188,12 @@
       "inspectOn": "Pilih penanda pada preview untuk membaca catatannya.",
       "note": "Catatan",
       "newTab": "Buka tab baru",
-      "role": "ROLE",
-      "period": "TIMELINE",
+      "role": "POSISI",
+      "period": "PERIODE",
       "technology": "TOOLS",
-      "features": "Rincian Implementasi",
-      "sourceCode": "Kode sumber",
-      "liveDemo": "Buka demo langsung",
+      "features": "Implementation Highlights",
+      "sourceCode": "Kode Sumber",
+      "liveDemo": "Buka Demo Langsung",
       "stackTitle": "Keahlian",
       "stackEmpty": "Belum ada kategori keahlian.",
       "experienceTitle": "Pengalaman",
@@ -220,7 +222,7 @@
       "menuClose": "Tutup navigasi",
       "specialization": "Spesialisasi",
       "gpa": "IPK",
-      "footerNote": "Dibangun dengan React, Tailwind CSS, dan Framer Motion."
+      "footerNote": "Merancang pengalaman digital, membangun antarmuka, dan mengubah ide menjadi kenyataan."
     }
   },
   "en": {
@@ -233,17 +235,17 @@
       "institution": "Universitas Kristen Satya Wacana (UKSW)",
       "specialization": "Software Engineering",
       "location": "Salatiga, Indonesia",
-      "headline": "Frontend Developer & UI/UX Designer",
-      "subheadline": "Interfaces designed in Figma, then built into responsive websites with React and Tailwind CSS.",
-      "bio": "I design interfaces in Figma, then build them into responsive websites with React and Tailwind CSS. During my internship as a UI/UX & Front-End Intern at Penerbit Erlangga (Sep–Dec 2025), I built the landing page for their digital library platform.",
+      "headline": "Yesaya Roy Nugraha",
+      "subheadline": "Frontend Developer & UI/UX Designer",
+      "bio": "I design and build digital experiences that combine intuitive design with responsive frontend implementation. With a background in UI/UX design and frontend development, I enjoy turning user needs into functional, engaging, and easy-to-use digital products.",
       "status": "Open to full-time work and freelance projects",
       "photoUrl": "",
       "experience": [
         {
           "role": "UI/UX & Front-End Intern",
-          "organization": "Penerbit Erlangga",
-          "period": "Sep 2025 – Dec 2025",
-          "description": "Designed the interface and built the landing page for a digital library platform with React.js and Tailwind CSS. Mostly focused on keeping the book catalog layout tidy, light, and easy to navigate at any screen size."
+          "organization": "PT Penerbit Erlangga",
+          "period": "September 2025 – December 2025",
+          "description": "Contributed to digital platform interface development by translating high-fidelity Figma designs into frontend code. Built responsive web pages using React.js and Tailwind CSS, focusing on clean user interactions and fluid navigation."
         }
       ],
       "cvUrl": "",
@@ -295,7 +297,7 @@
               "category": "Language"
             },
             {
-              "name": "HTML5 / CSS3",
+              "name": "HTML5 & CSS3",
               "category": "Markup"
             },
             {
@@ -312,8 +314,8 @@
               "category": "Design & Prototyping"
             },
             {
-              "name": "Wireframing",
-              "category": "Layout Structure"
+              "name": "UI/UX Design",
+              "category": "User Research"
             },
             {
               "name": "Prototyping",
@@ -338,8 +340,8 @@
       {
         "id": "e-library-landing",
         "title": "E-Library Landing Page",
-        "tagline": "Landing page for a digital library platform",
-        "description": "Built during my internship at Penerbit Erlangga to introduce their digital library service to new readers. I kept the page flow short: book previews, category filters, reader reviews, then the app download button, so visitors get the features right away.",
+        "tagline": "",
+        "description": "Implemented digital e-book platform interface designs into a responsive website using React.js and Tailwind CSS. Focused on translating high-fidelity Figma designs into an interactive digital experience with intuitive navigation across all screen sizes.",
         "category": "Frontend Development & UI/UX",
         "tags": [
           "React",
@@ -348,10 +350,10 @@
           "Lenis"
         ],
         "features": [
-          "Digital book previews organized by popular categories",
-          "Quick search plus category filters, so finding a book takes less effort",
-          "Reader reviews and a clear app download button",
-          "A responsive layout that reads well on desktop and mobile"
+          "Translated high-fidelity Figma designs into responsive web components.",
+          "Developed UI components using React.js and Tailwind CSS.",
+          "Implemented animations and interactions using Framer Motion.",
+          "Optimized responsive layouts for desktop and mobile devices."
         ],
         "demoUrl": "https://e-library-beta-azure.vercel.app/",
         "githubUrl": "https://github.com/yes4ya/E-Library",
@@ -362,17 +364,17 @@
           {
             "id": "book-preview",
             "label": "Book cover preview",
-            "detail": "Book covers scroll on their own at the top, so visitors can scan the collection without clicking through pagination."
+            "detail": "Book covers scroll automatically at the top, allowing users to scan the catalog effortlessly."
           },
           {
             "id": "lenis",
             "label": "Lenis smooth scroll",
-            "detail": "Lenis replaces the browser's default jump, so moving between sections feels smooth and the header never covers the text."
+            "detail": "Replaces default browser jump scrolling with smooth, precise transitions."
           },
           {
             "id": "motion",
             "label": "Framer Motion animation",
-            "detail": "Feature blocks show up one by one with a stagger, so the reading order stays clear without the page moving too much."
+            "detail": "Content blocks appear sequentially with elegant and natural stagger effects."
           }
         ]
       }
@@ -385,7 +387,7 @@
         "institution": "Universitas Kristen Satya Wacana (UKSW)",
         "location": "Salatiga, Indonesia",
         "startYear": 2022,
-        "endYear": 2026,
+        "endYear": "Present",
         "gpa": "3.53"
       }
     ],
@@ -394,14 +396,16 @@
       "email": "yesayaroynugraha@gmail.com",
       "linkedin": "https://www.linkedin.com/in/yesayaroynugraha/",
       "github": "https://github.com/yes4ya",
-      "ctaText": "Open to full-time roles, freelance projects, or just a chat about UI/UX design and frontend."
+      "ctaText": "Open to full-time roles, freelance projects, or discussions about digital product design and development. Have an interesting project in mind? Let's start a conversation.",
+      "heading": "Have an interesting idea to bring to life?",
+      "description": "Open to full-time roles, freelance projects, or discussions about digital product design and development. Have an interesting project in mind? Let's start a conversation."
     },
     "ui": {
       "skipToContent": "Skip to main content",
       "mainNav": "Main navigation",
-      "kicker": "Portfolio",
+      "kicker": "FRONTEND DEVELOPER & UI/UX DESIGNER · SALATIGA, INDONESIA",
       "contactQuick": "Quick contact",
-      "featuredWork": "Featured project",
+      "featuredWork": "Project",
       "previewMode": "Preview mode",
       "desktop": "Desktop",
       "mobile": "Mobile",
@@ -413,10 +417,10 @@
       "role": "ROLE",
       "period": "TIMELINE",
       "technology": "TOOLS",
-      "features": "Implementation details",
-      "sourceCode": "Source code",
-      "liveDemo": "Open live demo",
-      "stackTitle": "Skills",
+      "features": "Implementation Highlights",
+      "sourceCode": "Source Code",
+      "liveDemo": "Open Live Demo",
+      "stackTitle": "Expertise",
       "stackEmpty": "No skill categories yet.",
       "experienceTitle": "Experience",
       "experienceEmpty": "No work experience listed yet.",
@@ -426,14 +430,14 @@
       "copyEmail": "Copy email address",
       "emailCopied": "Email copied",
       "emailFailed": "Copy failed. Try selecting it manually.",
-      "formTitle": "Send a message",
+      "formTitle": "Send a Message",
       "formHint": "This message will open in your email app to",
       "formSent": "Your email app is now open. Press send there to finish the message.",
       "writeAnother": "Write another message",
       "nameLabel": "Name",
       "emailLabel": "Email",
       "messageLabel": "Message",
-      "sendMessage": "Send message",
+      "sendMessage": "Send Message",
       "themeLabel": "Colour theme",
       "themeLight": "Light",
       "themeDark": "Dark",
@@ -444,7 +448,7 @@
       "menuClose": "Close navigation",
       "specialization": "Specialization",
       "gpa": "GPA",
-      "footerNote": "Built with React, Tailwind CSS, and Framer Motion."
+      "footerNote": "Designing digital experiences, building interfaces, and turning ideas into reality."
     }
   }
 }
